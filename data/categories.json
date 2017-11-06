@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "title": "Football",
+        "parent_category_id": null,
+        "is_active": true
+    }, {
+        "id": 2,
+        "title": "Casino",
+        "parent_category_id": null,
+        "is_active": true
+    }, {
+        "id": 3,
+        "title": "Poker",
+        "parent_category_id": null,
+        "is_active": false
+    }, {
+        "id": 4,
+        "title": "Premier League",
+        "parent_category_id": 1,
+        "is_active": true
+    }, {
+        "id": 5,
+        "title": "Seria A",
+        "parent_category_id": 1,
+        "is_active": true
+    }
+] 
