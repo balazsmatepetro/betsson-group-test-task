@@ -13,6 +13,7 @@ export default class Category {
      * @param {Number} id The category ID.
      * @param {String} title The category name.
      * @param {Boolean} [isActive] The category is active or not.
+     * @throws {Error} Thrown when one of the arguments is invalid.
      */
     constructor(id, title, isActive = true) {
         if (!isNumber(id)) {
