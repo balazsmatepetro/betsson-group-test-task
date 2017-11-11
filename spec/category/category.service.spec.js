@@ -41,6 +41,8 @@ describe('CategoryService', () => {
                 });
             });
 
+            const mapSpy = spyOn(CategoryService, 'mapCategory').and.callThrough();
+
             service
                 .findAll()
                 .then(onSuccess)
@@ -53,6 +55,7 @@ describe('CategoryService', () => {
 
             function onEnd() {
                 expect(httpGetSpy).toHaveBeenCalled();
+                expect(mapSpy).toHaveBeenCalledTimes(2);
                 expect(isCatchCalled).toBe(false);
             }
 
@@ -122,6 +125,8 @@ describe('CategoryService', () => {
                 });
             });
 
+            const mapSpy = spyOn(CategoryService, 'mapCategory').and.callThrough();
+
             service
                 .findById(1)
                 .then(onSuccess)
@@ -134,6 +139,7 @@ describe('CategoryService', () => {
 
             function onEnd() {
                 expect(httpGetSpy).toHaveBeenCalled();
+                expect(mapSpy).toHaveBeenCalledTimes(1);
                 expect(isCatchCalled).toBe(false);
             }
 
