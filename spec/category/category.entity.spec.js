@@ -16,18 +16,20 @@ describe('Category entity creation', () => {
     });
 
     describe('should pass', () => {
-        var category = undefined;
+        const id = 1;
+        const title = 'Category 1';
+        let category = undefined;
 
         beforeEach(() => {
-            category = new Category(1, 'Category 1');
+            category = new Category(id, title);
         });
 
         it('when the ID is a number', () => {
-            expect(category.id).toEqual(1);
+            expect(category.id).toEqual(id);
         });
 
         it('when the title is a not empty string', () => {
-            expect(category.title).toEqual('Category 1');
+            expect(category.title).toEqual(title);
         });
 
         it('when the \'isActive\' value is not provided', () => {
@@ -35,7 +37,7 @@ describe('Category entity creation', () => {
         });
 
         it('when the \'isActive\' value is provided', () => {
-            const category = new Category(1, 'Category 1', false);
+            const category = new Category(id, title, false);
 
             expect(category.isActive).toEqual(false);
         });
