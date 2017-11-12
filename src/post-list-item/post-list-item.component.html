@@ -1,0 +1,9 @@
+<article>
+    <header>
+        <h1>
+            <a data-ui-sref="post({ id: {{ ::vm.post.id }} })">{{ ::vm.post.title }}</a>
+        </h1>
+    </header>
+    
+    <p>{{ ::vm.post.description | limitTo: vm.descriptionLimit }}</p>
+</article>
