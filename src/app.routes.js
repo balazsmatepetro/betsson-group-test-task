@@ -40,7 +40,7 @@ export default function appRouting($urlRouterProvider, $stateProvider) {
             }
         })
         .state('app.category', {
-            component: 'postList',
+            component: 'categoryDetailed',
             url: '/categories/{id}/posts',
             resolve: {
                 category: [
