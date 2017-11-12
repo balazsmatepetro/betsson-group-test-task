@@ -1,7 +1,8 @@
-import PostListController from './post-list.controller';
-
 export default {
-    controller: PostListController,
+    bindings: {
+        name: '<',
+        posts: '<'
+    },
     controllerAs: 'vm',
     templateUrl: 'src/post-list/post-list.component.html'
 };
