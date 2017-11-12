@@ -61,7 +61,7 @@ module.exports = function (grunt) {
         'eslint',
         'clean',
         'ngtemplates',
-        'browserify'
-        // 'sass'
+        'browserify',
+        'sass'
     ]);
 };
