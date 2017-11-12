@@ -196,6 +196,9 @@ describe('PostService', () => {
                 expect(isThenCalled).toBe(false);
             }
 
+            /**
+             * @param {String} reason 
+             */
             function onFailure(reason) {
                 expect(isString(reason)).toBe(true);
                 expect(reason).toEqual('The posts couldn\'t be found!');

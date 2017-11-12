@@ -82,29 +82,30 @@ describe('CategoryService', () => {
         it('should provide nothing when the request failed', () => {
             let isThenCalled = false;
 
-            const httpGetSpy = spyOn(__$http__, 'get').and.callFake(() => {
-                return __$q__.reject('reason');
-            });
+            const httpGetSpy = spyOn(__$http__, 'get').and.callFake(() => __$q__.reject('reason'));
+
+            const mapSpy = spyOn(CategoryService, 'mapCategory').and.callThrough();
 
             service
                 .findAll()
                 .then(() => {
                     isThenCalled = true;
                 })
-                .catch(onFail)
+                .catch(onFailure)
                 .finally(onEnd);
 
             __$rootScope__.$digest();
 
             function onEnd() {
                 expect(httpGetSpy).toHaveBeenCalled();
+                expect(mapSpy).not.toHaveBeenCalled();
                 expect(isThenCalled).toBe(false);
             }
 
             /**
              * @param {String} reason 
              */
-            function onFail(reason) {
+            function onFailure(reason) {
                 expect(isString(reason)).toBe(true);
                 expect(reason).toEqual('The categories couldn\'t be found!');
             }
@@ -157,29 +158,30 @@ describe('CategoryService', () => {
         it('should provide nothing when the request failed', () => {
             let isThenCalled = false;
 
-            const httpGetSpy = spyOn(__$http__, 'get').and.callFake(() => {
-                return __$q__.reject('reason');
-            });
+            const httpGetSpy = spyOn(__$http__, 'get').and.callFake(() => __$q__.reject('reason'));
+
+            const mapSpy = spyOn(CategoryService, 'mapCategory').and.callThrough();
 
             service
                 .findById(1)
                 .then(() => {
                     isThenCalled = true;
                 })
-                .catch(onFail)
+                .catch(onFailure)
                 .finally(onEnd);
 
             __$rootScope__.$digest();
 
             function onEnd() {
                 expect(httpGetSpy).toHaveBeenCalled();
+                expect(mapSpy).not.toHaveBeenCalled();
                 expect(isThenCalled).toBe(false);
             }
 
             /**
              * @param {String} reason 
              */
-            function onFail(reason) {
+            function onFailure(reason) {
                 expect(isString(reason)).toBe(true);
                 expect(reason).toEqual('The category couldn\'t be found!');
             }
