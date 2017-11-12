@@ -1,0 +1,7 @@
+<ul>
+    <li data-ng-repeat="category in vm.categories">
+        <a href="#">{{ ::category.title }}</a>
+        
+        <category-tree data-categories="category.children" data-ng-if="0 !== category.children.length && category.isActive"></category-tree>
+    </li>
+</ul>
