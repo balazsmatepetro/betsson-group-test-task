@@ -100,6 +100,7 @@ export default class CategoryService {
         return new Category(
             category['id'],
             category['title'],
+            category['parent_category_id'],
             category['is_active']
         );
     }

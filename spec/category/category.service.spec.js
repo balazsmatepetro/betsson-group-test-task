@@ -30,11 +30,13 @@ describe('CategoryService', () => {
                         {
                             'id': 1,
                             'title': 'Category 1',
+                            'parent_category_id': null,
                             'is_active': true
                         },
                         {
                             'id': 2,
                             'title': 'Category 2',
+                            'parent_category_id': 1,
                             'is_active': false
                         }
                     ]
@@ -71,10 +73,12 @@ describe('CategoryService', () => {
 
                 expect(categories[0].id).toEqual(1);
                 expect(categories[0].title).toEqual('Category 1');
+                expect(categories[0].parentId).toEqual(null);
                 expect(categories[0].isActive).toBe(true);
 
                 expect(categories[1].id).toEqual(2);
                 expect(categories[1].title).toEqual('Category 2');
+                expect(categories[1].parentId).toEqual(1);
                 expect(categories[1].isActive).toBe(false);
             }
         });
@@ -121,6 +125,7 @@ describe('CategoryService', () => {
                     data: {
                         'id': 1,
                         'title': 'Category 1',
+                        'parent_category_id': null,
                         'is_active': false
                     }
                 });
@@ -151,6 +156,7 @@ describe('CategoryService', () => {
                 expect(category instanceof Category).toBe(true);
                 expect(category.id).toEqual(1);
                 expect(category.title).toEqual('Category 1');
+                expect(category.parentId).toEqual(null);
                 expect(category.isActive).toBe(false);
             }
         });
