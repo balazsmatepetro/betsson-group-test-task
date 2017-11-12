@@ -1,0 +1,9 @@
+<article>
+    <header>
+        <h1>{{ ::vm.post.title }}</h1>
+    </header>
+
+    <img src="{{ ::vm.post.imageUrl }}" alt="{{ ::vm.post.title }}">
+
+    <div ng-bind-html="vm.post.description"></div>
+</article>
