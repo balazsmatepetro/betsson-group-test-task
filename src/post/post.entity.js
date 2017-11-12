@@ -2,7 +2,7 @@ import isNumber from 'lodash.isnumber';
 import isString from 'lodash.isstring';
 
 /**
- * Description of Post.
+ * Description of Post
  * 
  * @author Balázs Máté Petró <petrobalazsmate@gmail.com>
  */

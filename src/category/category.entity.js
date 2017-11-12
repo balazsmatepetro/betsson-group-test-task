@@ -2,7 +2,7 @@ import isNumber from 'lodash.isnumber';
 import isString from 'lodash.isstring';
 
 /**
- * Description of Category.
+ * Description of Category
  * 
  * @author Balázs Máté Petró <petrobalazsmate@gmail.com>
  */
