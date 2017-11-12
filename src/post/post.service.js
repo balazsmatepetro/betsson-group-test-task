@@ -19,6 +19,42 @@ export default class PostService {
     }
 
     /**
+     * Fetches and returns a Post collection.
+     * 
+     * @returns {ng.IPromise<Array.<Post>>}
+     */
+    findAll() {
+        const self = this;
+
+        return this
+            .$http
+            .get('/posts')
+            .then(onSuccess)
+            .catch(onFailure);
+
+        /**
+         * Returns a rejected promise.
+         * 
+         * @returns {ng.IPromise}
+         */
+        function onFailure() {
+            return self.$q.reject('The posts couldn\'t be found!');
+        }
+
+        /**
+         * Creates and returns a Post collection by the given response.
+         * 
+         * @param {ng.IHttpResponse} response The HTTP response.
+         * @returns {Array.<Post>}
+         */
+        function onSuccess(response) {
+            // TODO: Code duplication, it could be moved to a static method or something like this!
+            // TODO: Check response data structure!
+            return map(response.data, self.constructor.mapPost);
+        }
+    }
+
+    /**
      * Fetches and returns the Post by ID.
      * 
      * @param {Number} id The post ID.
@@ -85,6 +121,7 @@ export default class PostService {
          * @returns {Array.<Post>}
          */
         function onSuccess(response) {
+            // TODO: Code duplication, it could be moved to a static method or something like this!
             // TODO: Check response data structure!
             return map(response.data, self.constructor.mapPost);
         }
