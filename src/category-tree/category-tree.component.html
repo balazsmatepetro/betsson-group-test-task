@@ -1,4 +1,4 @@
-<ul>
+<ul class="category-tree">
     <li data-ng-repeat="category in vm.categories" data-ng-if="category.isActive">
         <a data-ui-sref="app.category({ id: {{ ::category.id }} })">{{ ::category.title }}</a>
         

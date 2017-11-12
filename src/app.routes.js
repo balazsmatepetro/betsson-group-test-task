@@ -1,7 +1,7 @@
 export default function appRouting($urlRouterProvider, $stateProvider) {
     $stateProvider
         .state('app', {
-            template: '<category-tree data-categories="categoryTree"></category-tree><div ui-view></div>',
+            templateUrl: 'src/app.template.html',
             controller: ['$scope', 'categoryTreeResolver', ($scope, categoryTreeResolver) => {
                 $scope.categoryTree = categoryTreeResolver.categories;
             }],

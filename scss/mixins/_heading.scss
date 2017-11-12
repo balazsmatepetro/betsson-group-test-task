@@ -1,0 +1,7 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+@mixin heading() {
+    font-size: $font-size-large;
+    margin: 0 0 ($line-height-computed * 2) 0;
+    padding: 0;
+}

@@ -1,0 +1,20 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../variables";
+
+.footer {
+    background: $body-bg;
+    bottom: 0;
+    font-size: $font-size-small;
+    display: block;
+    height: $footer-height;
+    left: 0;
+    margin: 0;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+
+    .container {
+        padding: ($line-height-computed / 4) 0;
+        text-align: center;
+    }
+}

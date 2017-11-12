@@ -1,3 +1,5 @@
-<h1>{{ ::vm.name }}</h1>
+<section class="post-list">
+    <h1 class="post-list-heading">{{ ::vm.name }}</h1>
 
-<post-list-item data-ng-repeat="post in vm.posts" data-post="post" data-description-limit="20" data-ng-if="post.isActive"></post-list-item>
+    <post-list-item data-ng-repeat="post in vm.posts" data-post="post" data-description-limit="20" data-ng-if="post.isActive"></post-list-item>
+</section>

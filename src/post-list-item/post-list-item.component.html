@@ -1,9 +1,9 @@
-<article>
+<article class="post-list-item">
     <header>
-        <h1>
+        <h1 class="post-list-item-heading">
             <a data-ui-sref="app.post({ id: {{ ::vm.post.id }} })">{{ ::vm.post.title }}</a>
         </h1>
     </header>
     
-    <p>{{ ::vm.post.description | limitTo: vm.descriptionLimit }}</p>
+    <p class="post-list-item-description">{{ ::vm.post.description | limitTo: vm.descriptionLimit }}</p>
 </article>

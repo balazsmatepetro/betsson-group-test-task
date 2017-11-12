@@ -1,0 +1,17 @@
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "components/category-tree";
+@import "components/footer";
+@import "components/header";
+@import "components/post-list-item";
+@import "components/post-list";
+@import "components/post";
+@import "components/site-heading";
+
+body {
+    padding-bottom: $footer-height;
+}
+
+.content {
+    margin: $line-height-computed 0;
+}

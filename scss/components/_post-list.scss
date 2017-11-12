@@ -1,0 +1,9 @@
+@import "../mixins/heading";
+
+.post-list {
+    display: block;
+}
+
+.post-list-heading {
+    @include heading;
+}
